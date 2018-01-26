@@ -1,0 +1,29 @@
+<div class="container-fluid text-center">    
+    <div class="row content">
+      <div class="col-sm-2 sidenav">
+        <p><a href="#">Link</a></p>
+        <p><a href="#">Link</a></p>
+        <p><a href="#">Link</a></p>
+      </div>
+      <div class="col-sm-8 text-left"  [@goals]="goals.length"> 
+        <h1>Welcome  {{itemCount}}</h1>
+        <form>
+          <input type="text" class="txt" name="item" placeholder="Life goal" [(ngModel)]="goalText">
+          <input type="submit" class="btn" [value]="btnText" (click)="addItem()">
+        </form>
+        <hr>
+        <h3>Test</h3>
+        <p *ngFor="let goal of goals; let i = index" (click)="removeItem(i)">
+          {{goal}}
+        </p>
+      </div>
+      <div class="col-sm-2 sidenav">
+        <div class="well">
+          <p>ADS</p>
+        </div>
+        <div class="well">
+          <p>ADS</p>
+        </div>
+      </div>
+    </div>
+  </div>
